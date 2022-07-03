@@ -1,10 +1,13 @@
 import { NFTStorage } from "nft.storage";
 import React, { useState } from "react";
 import Button from "../components/Button";
-import { Web3Storage } from 'web3.storage'
+import { Web3Storage } from "web3.storage";
 
 // Construct with token and endpoint
-const client = new Web3Storage({ token: process.env.NEXT_PUBLIC_WEB3STORAGE_KEY??''})
+// @ts-ignore
+const client = new Web3Storage({
+  token: process.env.NEXT_PUBLIC_WEB3STORAGE_KEY ?? "",
+});
 const UploadImage = () => {
   const [selectedFile, setSelectedFile] = useState<any>();
   const changeHandler = (event: any) => {
@@ -20,13 +23,12 @@ const UploadImage = () => {
     // setIsSelected(true);
   };
 
-
   async function storeFileUsingWebStorage() {
     const rootCid = await client.put([selectedFile], {
-      name: 'cat_pics',
-      maxRetries: 3
-    })
-    console.log(rootCid)
+      name: "cat_pics",
+      maxRetries: 3,
+    });
+    console.log(rootCid);
   }
   // const result = await storeNFT(imagePath, name, description);
   return (

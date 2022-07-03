@@ -54,10 +54,9 @@ const Bounty = () => {
         </div>
         <div className="flex markdown-style flex-col mt-3.5 md:mt-7">
           {metadata?.about && (
-            <ReactMarkdown
-              children={metadata?.about}
-              remarkPlugins={[remarkGfm]}
-            />
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {metadata?.about}
+            </ReactMarkdown>
           )}
         </div>
 

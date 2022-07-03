@@ -415,7 +415,7 @@ const Creator = () => {
           <span className="text-primary-500 mb-1 w-full text-xs">
             {about.length}/500
           </span>
-          <ReactMarkdown children={about} remarkPlugins={[remarkGfm]} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{about}</ReactMarkdown>
           {/* <Button className="my-1" block={true} onClick={generateMetadata}>
             Generate Metadata
           </Button>

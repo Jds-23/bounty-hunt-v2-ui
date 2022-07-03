@@ -12,6 +12,7 @@ export async function storeFile(file: any, name: any) {
     );
     return;
   }
+  // @ts-ignore
   const web3storage = new Web3Storage({ token });
   console.log(`> 🤖 calculating content ID for ${name}`);
   const cid = await web3storage.put([file], {
@@ -44,6 +45,7 @@ export async function storeFiles(files: File[], name: any) {
     );
     return;
   }
+  // @ts-ignore
   const web3storage = new Web3Storage({ token });
   console.log(`> 🤖 calculating content ID for ${name}`);
   const cid = await web3storage.put(files, {
