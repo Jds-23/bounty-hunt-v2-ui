@@ -9,8 +9,7 @@ import { getEllipsisTxt } from "../../utils";
 
 const Bounties = () => {
   const [eligible, setEligile] = useState(false);
-  const { account, web3Provider, connect, disconnect, chainId, provider } =
-    useWallet();
+  const { account, web3Provider, connect, chainId, provider } = useWallet();
   const bounties = useAdminBounties(account);
 
   useEffect(() => {
@@ -47,7 +46,6 @@ const Bounties = () => {
               if (!account) {
                 connect();
               } else {
-                disconnect();
               }
             }}
             className={`p-2 mx-1 ml-auto font-bold rounded-md justify-self-end ${
