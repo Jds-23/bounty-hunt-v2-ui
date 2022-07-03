@@ -20,8 +20,7 @@ const Bounty = () => {
     undefined
   );
   const [loading, setLoading] = useState(false);
-  const { account, web3Provider, connect, disconnect, chainId, provider } =
-    useWallet();
+  const { account, web3Provider, connect, chainId, provider } = useWallet();
 
   useEffect(() => {
     if (bounty && winners?.length !== bounty.tokenLimit) {
@@ -104,7 +103,6 @@ const Bounty = () => {
               if (!account) {
                 connect();
               } else {
-                disconnect();
               }
             }}
             className={`p-2 mx-1 ml-auto font-bold rounded-md justify-self-end ${
